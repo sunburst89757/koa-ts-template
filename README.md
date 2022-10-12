@@ -1,24 +1,28 @@
 ## koa-ts-template
 
-这是一个通用的 koa typescript 配置环境，支持的功能如下
+该模板是集成了 prisma orm 的版本。
 
-- 集成 [prisma](https://www.prisma.io/) 对 ts 类型支持友好的数据库 ORM 支持 MYSQL/PostgreSQL/SQLite/MongoDB 等
-- 封装了数据返回规范和错误处理函数
+## 使用
 
-  ![](./images/1.png)
+- 添加.env 文件 设置 DATABASE_URL 参考[prisma 文档](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-typescript-postgres).
+- 执行下面脚本根据 model 创建对应的数据表 user post
 
-  ![](./images/2.png)
+  ```
+  npm run db
+  ```
 
-```ts
-//  错误处理
-ctx.onError({
-  code: HttpStatus.FORBIDDEN,
-});
-//  成功数据返回
-ctx.onSuccess({
-  data: res,
-  code: HttpStatus.OK,
-});
+- 开启应用
+
+  ```
+  npm run start
+  ```
+
+## 注意事项
+
+每次手动修改 model 后需要重新生成 prisma client api，即手动执行
+
+```
+ npm run db
 ```
 
-- 封装通用的路由中间件注册方案解放双手不用手动注册路由
+如果执行完后仍然 ts 没有正确的代码提示，关掉项目重新启动即可
