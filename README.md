@@ -4,6 +4,7 @@ general 分支集成了常用的注册用户 登录功能
 
 - 登录使用的是 jwt token 使用的是 openSSL 公私钥加密的方式 生成方式[见此](https://www.fzb.me/2015-1-15-openssl-rsa.html)
 - test.controller.ts 是对 token 的校验测试，使用在具体项目时可以删除
+- 集成 Commitizen 库进行 git 提交管理规范
 
 ### 目录结构
 
@@ -37,6 +38,13 @@ general 分支集成了常用的注册用户 登录功能
 
   ```
   npm run start
+  ```
+
+- git 提交规范
+
+  ```
+  npm run commit
+
   ```
 
 ### 注意
