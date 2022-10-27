@@ -55,7 +55,7 @@ general 分支集成了常用的注册用户 登录功能
  npm run db
 ```
 
-如果执行完后仍然 ts 没有正确的代码提示，关掉项目重新启动即可
+如果执行完后仍然 ts 仍然没有正确的代码提示，可以重启 typescript server，在 vscode 里可以使用 ctrl+shift+p 搜索 restart ts server 即可，其他方式请自行探索。
 
 2. 在定义 koa-bodyparser 库的 body 类型遇到了类型定义的问题，采用了修改 node-modules 中@types/koa-bodyparser 中 index.d.ts 的类型并用 patch-package 这个第三方库保证使用本模板安装环境时也修改这个类型文件。具体使用时采用类型断言的方式绕开 ts 检测。
 
